@@ -6,7 +6,6 @@
 #include <fcntl.h>
 #include <string.h>
 #include <stdbool.h>
-#define max_size 255
 
 void check_error(bool expression, char* message) {
     if (expression) {
@@ -19,6 +18,10 @@ void check_error(bool expression, char* message) {
 int main (int argc, char* argv[]) {
     pid_t pid;
     int pipe_1[2];
+    if (pipe(pipe_1) == -1) {
+        perror("pipe");
+        _exit(EXIT_FAILURE);
+    }
     if (argc != 2) {
         write(1, "Error: no filename\n", 20);
         exit(EXIT_FAILURE);
@@ -40,7 +43,6 @@ int main (int argc, char* argv[]) {
     }
     else {
         check_error((pid == -1), "Process error");
-        printf("sssssss\n");
         close(pipe_1[1]);
         wait(0);
         float result;
@@ -48,6 +50,7 @@ int main (int argc, char* argv[]) {
         while ((read(pipe_1[0], &result, sizeof(float))) > 0) {
             if (result == -1) {
                 write(STDOUT_FILENO, "Attempt to divide by zero\n", 27);
+                exit(EXIT_FAILURE);
             }
             sprintf(answer, "%f\n", result);
             check_error(write(STDOUT_FILENO, answer, strlen(answer)) == -1, "Write error\n");

@@ -17,7 +17,6 @@ int main() {
     int k = 0;
     float dot = 0;
     int count = 0;
-    float error = 0;
     float numbers[100];
 
     do {
@@ -42,7 +41,6 @@ int main() {
             }
             if (c == ' ' || c == '\n' || c == EOF) {
                 numbers[count] = nmbr;
-                printf("%f\n", numbers[count]);
                 nmbr = 0;
                 count++;
                 if (c == '\n' || c == EOF) {
@@ -50,8 +48,7 @@ int main() {
                     for (int i = 1; i < count; i++) {
                         if (numbers[i] == 0) {
                             result = -1;
-                            printf("Attempt to divide by zero\n");
-                            _exit(-1);
+                            write(STDOUT_FILENO, &result, sizeof(result));
                         }
                         result = first / numbers[i];
                         first = result;
@@ -63,8 +60,7 @@ int main() {
             }
         }
         if (c == '\n' || c == EOF) {
-            printf("Answer - %f\n", result);
-            // write(STDOUT_FILENO, &result, sizeof(float));
+            write(STDOUT_FILENO, &result, sizeof(result));
             result = 0;
             k = 0;
             dot = 0;
