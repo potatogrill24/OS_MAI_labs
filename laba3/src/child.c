@@ -12,7 +12,7 @@
 #include <semaphore.h>
 #include <math.h>
 
-#define MEMORY_NAME "laba4"
+#define MEMORY_NAME "laba3"
 #define DATA_SIZE 256
 #define MEMORY_SIZE 8192
 
