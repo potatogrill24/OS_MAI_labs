@@ -64,5 +64,6 @@ int main (int argc, char* argv[]) {
         shm_unlink(MEMORY_NAME);
         close(fd);
     }
+    
     return 0;
 }
