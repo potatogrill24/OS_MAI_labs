@@ -18,7 +18,6 @@ void* thread_func(void* arg) {
             }
         }
         if (j == res_len) {
-            // printf("Вхождение на позиции %d\n", i);
             match_count++;
         }
     }
@@ -49,14 +48,11 @@ int main(int argc, char* argv[]) {
         thread_create(&threads[i], NULL, thread_func, &thread_args[i]);
     }
 
-    // int s_time = clock();
     for (i = 0; i < max_threads; i++) {
         pthread_join(threads[i], NULL);
     }
 
     printf("Общее количество совпадений: %d\n", match_count);
-
-    // printf("Время выполнения программы с использованием %d потоков составило %f с\n", max_threads, (float)(clock() - s_time)/CLOCKS_PER_SEC);
 
     free(thread_args);
     free(threads);
