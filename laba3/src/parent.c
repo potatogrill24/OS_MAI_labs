@@ -11,7 +11,7 @@
 #include <stdbool.h>
 #include <semaphore.h>
 
-#define MEMORY_NAME "laba4"
+#define MEMORY_NAME "laba3"
 #define DATA_SIZE 256
 #define MEMORY_SIZE 8192
 
@@ -31,11 +31,6 @@ typedef struct {
 int main (int argc, char* argv[]) {
     pid_t pid;
     FILE *fp = NULL;
-    // int pipe_1[2];
-    // if (pipe(pipe_1) == -1) {
-    //     perror("pipe");
-    //     _exit(EXIT_FAILURE);
-    // }
     if (argc != 2) {
         write(1, "Wrong arguments\n", 17);
         exit(EXIT_FAILURE);
@@ -48,16 +43,11 @@ int main (int argc, char* argv[]) {
     else if (pid == 0) {
         fp = freopen(argv[1], "r", stdin);
         check_error(fp == NULL, "Can't open file");
-        // close (pipe_1[0]);
-        // check_error(dup2(fd, STDIN_FILENO) < 0, "Error dub");
-        // dup2(pipe_1[1], STDOUT_FILENO);
         execl("./child", "/.child", NULL);
         perror("execl");
         return 1;
     }
     else {
-        // check_error((pid == -1), "Process error");
-        // close(pipe_1[1]);
         wait(0);
         int fd = shm_open(MEMORY_NAME, O_RDONLY, S_IRUSR | S_IWUSR);
         check_error(fd == -1, "Can't oped shared memory file");
@@ -73,17 +63,6 @@ int main (int argc, char* argv[]) {
         munmap(addr, MEMORY_SIZE);
         shm_unlink(MEMORY_NAME);
         close(fd);
-        // float result;
-        // char answer[50];
-        // while ((read(pipe_1[0], &result, sizeof(float))) > 0) {
-        //     if (result == -1) {
-        //         write(STDOUT_FILENO, "Attempt to divide by zero\n", 27);
-        //         exit(EXIT_FAILURE);
-        //     }
-        //     sprintf(answer, "%f\n", result);
-        //     check_error(write(STDOUT_FILENO, answer, strlen(answer)) == -1, "Write error\n");
-        //     check_error(write(STDOUT_FILENO, "\n", 1) == -1, "Write error\n");
-        // }
     }
     return 0;
 }
