@@ -4,7 +4,7 @@
 void info() {
     std::cout << "Please select: K arg1, arg2" << std::endl;
     std::cout << "K - selected function from library" << std::endl;
-    std::cout << "K - complete the execution" << std::endl;
+    std::cout << "K = 0 - complete the execution" << std::endl;
     std::cout << "K = 1 - Evklid's algorithm; arg1, arg2 - numbers" << std::endl;
     std::cout << "K = 2 - Leibniz series; arg1 - row length" << std::endl;
 }
