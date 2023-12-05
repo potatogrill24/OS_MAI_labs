@@ -27,13 +27,3 @@ float Pi(int k) {
     }
     return sum * 4.0;
 }
-
-
-
-// int main() {
-//     int c = Evklid(18, 27);
-//     std::cout << c << std::endl;
-//     int res = Naive(243, 54);
-//     std::cout << res << std::endl;;
-//     return 0;
-// }
