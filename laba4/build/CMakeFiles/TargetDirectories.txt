@@ -1,0 +1,7 @@
+/home/stepan/Рабочий стол/учеба/prog 3 sem/OSI/laba4/build/CMakeFiles/Lib1.dir
+/home/stepan/Рабочий стол/учеба/prog 3 sem/OSI/laba4/build/CMakeFiles/prog1.dir
+/home/stepan/Рабочий стол/учеба/prog 3 sem/OSI/laba4/build/CMakeFiles/Lib1_1.dir
+/home/stepan/Рабочий стол/учеба/prog 3 sem/OSI/laba4/build/CMakeFiles/Lib2.dir
+/home/stepan/Рабочий стол/учеба/prog 3 sem/OSI/laba4/build/CMakeFiles/prog2.dir
+/home/stepan/Рабочий стол/учеба/prog 3 sem/OSI/laba4/build/CMakeFiles/edit_cache.dir
+/home/stepan/Рабочий стол/учеба/prog 3 sem/OSI/laba4/build/CMakeFiles/rebuild_cache.dir

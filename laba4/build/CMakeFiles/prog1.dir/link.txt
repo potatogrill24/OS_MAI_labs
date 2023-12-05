@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/prog1.dir/prog1.cpp.o -o prog1  -Wl,-rpath,"/home/stepan/Рабочий стол/учеба/prog 3 sem/OSI/laba4/build" libLib1.so 
