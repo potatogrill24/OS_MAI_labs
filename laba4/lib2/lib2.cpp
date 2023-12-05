@@ -29,10 +29,3 @@ float Pi(int k) {
     }
     return pi * 2.0;
 }
-
-// int main  () {
-//     float res = Leibnic(40000);
-//     std::cout << res << std::endl;
-//     float res2 = Vallis(40000);
-//     std::cout << res2 << std::endl;
-// }
