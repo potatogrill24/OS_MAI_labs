@@ -10,10 +10,10 @@
 
 int id;
 
-typedef struct pair {
-    int first;
-    int second;
-} pair;
+// typedef struct pair {
+//     int first;
+//     int second;
+// } pair;
 
 int main(int argc, char **argv) {
     sscanf(argv[1], "%d", &id);
